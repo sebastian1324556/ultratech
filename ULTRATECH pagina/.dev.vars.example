@@ -1,0 +1,30 @@
+# Copia este archivo como `.dev.vars` para desarrollo local con `wrangler pages dev dist`.
+# En producción configura las mismas claves en: Cloudflare Pages → Settings → Variables and Secrets.
+
+# ── Turso (libSQL) ──────────────────────────────────────────────
+TURSO_DATABASE_URL=libsql://TU-BASE-TU-ORG.turso.io
+TURSO_AUTH_TOKEN=REEMPLAZA_CON_TU_TOKEN_DE_TURSO
+
+# ── Sesiones y administrador ────────────────────────────────────
+# Cadena aleatoria larga (>= 16 caracteres):  openssl rand -base64 32
+AUTH_SECRET=REEMPLAZA_CON_UN_SECRETO_LARGO_Y_ALEATORIO
+# La cuenta que se registre/ingrese con este correo obtiene el rol admin (Admin.html)
+ADMIN_EMAIL=admin@tudominio.com
+
+# ══════════════════════════════════════════════════════════════════
+#  NEQUI CONECTA — CREDENCIALES PARA HABILITAR LOS COBROS
+#  Se obtienen en https://conecta.nequi.com.co (sección Credenciales)
+# ══════════════════════════════════════════════════════════════════
+NEQUI_CLIENT_ID=REEMPLAZA_CON_TU_CLIENT_ID
+NEQUI_CLIENT_SECRET=REEMPLAZA_CON_TU_CLIENT_SECRET
+NEQUI_API_KEY=REEMPLAZA_CON_TU_API_KEY
+# Sandbox (pruebas):
+NEQUI_AUTH_URI=https://oauth.sandbox.nequi.com/oauth2/token
+NEQUI_API_BASE_PATH=https://api.sandbox.nequi.com/payments/v2
+# Producción (cuando Nequi apruebe tu comercio):
+# NEQUI_AUTH_URI=https://oauth.nequi.com/oauth2/token
+# NEQUI_API_BASE_PATH=https://api.nequi.com/payments/v2
+# Código de comercio asignado por Nequi (por defecto NIT_1)
+NEQUI_COMMERCE_CODE=NIT_1
+# "true" simula los cobros sin llamar a Nequi. NUNCA activar en producción.
+NEQUI_MOCK=false

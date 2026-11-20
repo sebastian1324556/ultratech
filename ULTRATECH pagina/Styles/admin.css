@@ -1,0 +1,50 @@
+/* ULTRATECH · estilos del panel de administración (Admin.html) */
+.login-screen { min-height: 100vh; display: grid; place-items: center; padding: 1rem;
+  background: radial-gradient(circle at 20% 20%, rgba(0, 240, 255, 0.12), transparent 40%), radial-gradient(circle at 80% 80%, rgba(112, 0, 255, 0.2), transparent 45%); }
+.login-card { width: min(420px, 100%); background: var(--surface); border: 1px solid var(--border); border-radius: 24px; padding: 2rem; box-shadow: var(--shadow); animation: pop 0.4s ease; }
+.login-card h1 { font-size: 1.6rem; margin: 1rem 0 0.3rem; }
+.login-card .logo { font-size: 1.2rem; }
+
+.admin-layout { display: grid; grid-template-columns: 240px 1fr; min-height: 100vh; }
+.sidebar { background: var(--surface); border-right: 1px solid var(--border); padding: 1.5rem 1rem; display: flex; flex-direction: column; gap: 0.4rem; position: sticky; top: 0; height: 100vh; }
+.sidebar .logo { padding: 0 0.6rem 1.2rem; }
+.nav-btn { display: flex; align-items: center; gap: 0.7rem; padding: 0.75rem 1rem; border-radius: 12px; color: var(--muted); font-weight: 500; text-align: left; transition: all 0.2s; }
+.nav-btn:hover { background: var(--surface-2); color: var(--text); }
+.nav-btn.active { background: var(--gradient); color: #fff; }
+.sidebar-foot { margin-top: auto; display: grid; gap: 0.6rem; font-size: 0.82rem; color: var(--muted); padding: 0 0.4rem; word-break: break-all; }
+
+.admin-main { padding: 2rem; min-width: 0; }
+.panel { animation: pop 0.3s ease; }
+.panel-head { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+.panel-head h2 { font-size: 1.7rem; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.4rem; margin-bottom: 1.5rem; }
+.card h3 { margin-bottom: 1rem; font-size: 1.1rem; }
+
+.table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); }
+table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+th { text-align: left; color: var(--muted); font-weight: 600; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; }
+th, td { padding: 0.85rem 1rem; border-bottom: 1px solid var(--border); vertical-align: middle; }
+tbody tr { transition: background 0.2s; }
+tbody tr:hover { background: rgba(255, 255, 255, 0.025); }
+tbody tr:last-child td { border-bottom: 0; }
+.thumb { width: 44px; height: 44px; border-radius: 10px; display: grid; place-items: center; background: var(--surface-2); overflow: hidden; font-size: 1.3rem; }
+.thumb img { width: 100%; height: 100%; object-fit: cover; }
+.row-actions { display: flex; gap: 0.4rem; }
+.status-select { padding: 0.4rem 0.6rem; border-radius: 10px; background: var(--bg); border: 1px solid var(--border); }
+.order-items { color: var(--muted); font-size: 0.82rem; }
+.empty-row { text-align: center; color: var(--muted); padding: 2rem; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+.stat { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.1rem 1.3rem; }
+.stat strong { display: block; font-family: var(--font-display); font-size: 1.7rem; }
+.stat span { color: var(--muted); font-size: 0.82rem; }
+.quote-msg { max-width: 360px; white-space: pre-wrap; color: var(--muted); }
+
+.admin-topbar { display: none; }
+
+@media (max-width: 900px) {
+  .admin-layout { grid-template-columns: 1fr; }
+  .sidebar { position: fixed; z-index: 80; width: 260px; transform: translateX(-100%); transition: transform 0.3s; }
+  .sidebar.open { transform: none; }
+  .admin-topbar { display: flex; align-items: center; justify-content: space-between; padding: 0.8rem 1rem; background: var(--surface); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 40; }
+  .admin-main { padding: 1.2rem 1rem; }
+}

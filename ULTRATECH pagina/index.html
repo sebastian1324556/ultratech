@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ULTRATECH · Componentes de PC, laptops, celulares y diseño web</title>
+  <meta name="description" content="Tienda de tecnología ULTRATECH: componentes de PC, laptops, celulares, accesorios y diseño web personalizado. Paga con Nequi." />
+  <meta name="theme-color" content="#0B0F19" />
+  <link rel="icon" href="/images/logo.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/Styles/base.css" />
+  <link rel="stylesheet" href="/Styles/store.css" />
+</head>
+<body>
+  <div class="promo-bar" data-content="promoBar">⚡ Envíos a toda Colombia · Paga fácil con Nequi</div>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#inicio" class="logo"><img src="/images/logo.svg" alt="" /><span data-content="brandName">ULTRATECH</span></a>
+      <nav class="nav" id="nav" aria-label="Principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#web">Diseño web</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <div class="header-actions">
+        <div id="authArea"></div>
+        <button class="icon-btn cart-btn" id="cartBtn" aria-label="Abrir carrito">
+          🛒<span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="orb orb-cyan"></div><div class="orb orb-violet"></div>
+      <div class="hero-bg" id="heroBg"></div>
+      <div class="container hero-grid">
+        <div>
+          <span class="hero-badge">● <span data-content="heroBadge">Tecnología de última generación</span></span>
+          <h1 data-content="heroTitle">Potencia tu mundo con tecnología ULTRA</h1>
+          <p data-content="heroSubtitle">Componentes de PC, laptops, celulares y accesorios con los mejores precios y garantía real.</p>
+          <div class="hero-cta">
+            <a href="#catalogo" class="btn btn-primary" data-content="heroCta">Explorar catálogo</a>
+            <a href="#web" class="btn btn-ghost">Cotizar mi web</a>
+          </div>
+        </div>
+        <div class="hero-art"><img src="/images/hero.svg" alt="Laptop, celular y procesador ULTRATECH" /></div>
+      </div>
+    </section>
+
+    <section class="section" id="catalogo">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 class="gradient-text" data-content="productsTitle">Catálogo ULTRATECH</h2>
+          <p class="muted">Elige tu categoría y arma tu pedido en segundos.</p>
+        </div>
+        <div class="toolbar reveal">
+          <div class="chips" id="chips" role="tablist" aria-label="Categorías"></div>
+          <input class="search" id="search" type="search" placeholder="Buscar productos…" aria-label="Buscar productos" />
+        </div>
+        <div class="product-grid" id="productGrid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="section web-section" id="web">
+      <div class="container">
+        <div class="box reveal">
+          <div>
+            <h2 class="gradient-text" data-content="webTitle">¿Necesitas una página web a tu medida?</h2>
+            <p class="muted" data-content="webText">Diseñamos sitios web y tiendas online personalizadas, rápidas y listas para vender. Cuéntanos tu idea y te enviamos una cotización.</p>
+            <ul class="feature-list">
+              <li>Diseño 100% personalizado y responsivo</li>
+              <li>Tiendas online con pagos integrados</li>
+              <li>Hosting rápido y seguro en la nube</li>
+              <li>Cotización sin compromiso</li>
+            </ul>
+          </div>
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="field"><label for="qName">Nombre</label><input id="qName" name="name" required maxlength="100" /></div>
+              <div class="field"><label for="qPhone">Teléfono</label><input id="qPhone" name="phone" inputmode="tel" maxlength="20" /></div>
+            </div>
+            <div class="field"><label for="qEmail">Correo</label><input id="qEmail" name="email" type="email" required /></div>
+            <div class="field">
+              <label for="qType">Tipo de proyecto</label>
+              <select id="qType" name="projectType">
+                <option>Página corporativa</option><option>Tienda online</option><option>Landing page</option><option>Sistema a medida</option>
+              </select>
+            </div>
+            <div class="field"><label for="qMessage">Cuéntanos tu idea</label><textarea id="qMessage" name="message" required maxlength="2000"></textarea></div>
+            <p class="form-error" id="contactError" role="alert"></p>
+            <button class="btn btn-primary btn-block" type="submit">Solicitar cotización</button>
+          </form>
+        </div>
+      </div>
+      <span id="contacto"></span>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span data-content="footerText">© ULTRATECH. Todos los derechos reservados.</span>
+      <span>Pagos seguros con <strong style="color:#da0081">Nequi</strong></span>
+    </div>
+  </footer>
+  <a class="whatsapp" id="whatsappLink" href="#" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp" hidden>💬</a>
+
+  <!-- Carrito -->
+  <div class="overlay" id="overlay"></div>
+  <aside class="drawer" id="cartDrawer" aria-label="Carrito de compras" aria-hidden="true">
+    <div class="drawer-head"><h2>Tu carrito</h2><button class="icon-btn" id="closeCart" aria-label="Cerrar carrito">✕</button></div>
+    <div class="drawer-items" id="cartItems"></div>
+    <div class="drawer-foot">
+      <div class="total-row"><span class="muted">Total</span><strong id="cartTotal">$0</strong></div>
+      <button class="btn btn-primary btn-block" id="checkoutBtn">Pagar con Nequi</button>
+      <button class="btn btn-ghost btn-block" id="clearCart">Vaciar carrito</button>
+    </div>
+  </aside>
+
+  <!-- Acceso / registro -->
+  <dialog id="authDialog">
+    <div class="dialog-body">
+      <div class="dialog-head"><h2 id="authTitle">Bienvenido</h2><button class="icon-btn" data-close aria-label="Cerrar">✕</button></div>
+      <div class="tabs" role="tablist">
+        <button class="tab active" data-tab="login" role="tab">Ingresar</button>
+        <button class="tab" data-tab="register" role="tab">Crear cuenta</button>
+      </div>
+      <form id="loginForm" novalidate>
+        <div class="field"><label for="lEmail">Correo</label><input id="lEmail" name="email" type="email" autocomplete="email" required /></div>
+        <div class="field"><label for="lPass">Contraseña</label><input id="lPass" name="password" type="password" autocomplete="current-password" required /></div>
+        <p class="form-error" role="alert"></p>
+        <button class="btn btn-primary btn-block" type="submit">Ingresar</button>
+      </form>
+      <form id="registerForm" hidden novalidate>
+        <div class="field"><label for="rName">Nombre completo</label><input id="rName" name="name" autocomplete="name" required /></div>
+        <div class="form-row">
+          <div class="field"><label for="rEmail">Correo</label><input id="rEmail" name="email" type="email" autocomplete="email" required /></div>
+          <div class="field"><label for="rPhone">Celular</label><input id="rPhone" name="phone" inputmode="numeric" placeholder="3001234567" maxlength="10" required /></div>
+        </div>
+        <div class="field"><label for="rPass">Contraseña (mín. 8 caracteres)</label><input id="rPass" name="password" type="password" autocomplete="new-password" minlength="8" required /></div>
+        <p class="form-error" role="alert"></p>
+        <button class="btn btn-primary btn-block" type="submit">Crear cuenta</button>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- Checkout con Nequi -->
+  <dialog id="checkoutDialog"><div class="dialog-body" id="checkoutBody"></div></dialog>
+
+  <!-- Mis pedidos -->
+  <dialog id="ordersDialog">
+    <div class="dialog-body">
+      <div class="dialog-head"><h2>Mis pedidos</h2><button class="icon-btn" data-close aria-label="Cerrar">✕</button></div>
+      <div class="my-orders" id="ordersBody"></div>
+    </div>
+  </dialog>
+
+  <script type="module" src="/Scripts/store/main.js"></script>
+</body>
+</html>
